@@ -1,0 +1,22 @@
+.main-signup{
+    width:10px;
+    height:-20px;
+}
+.signup-text{
+    position: absolute;
+    bottom: 75%;
+    right: 340px;
+    font-family:  system-ui;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.span-text{
+    color:blue
+}
+.mb-3{
+    
+}
+.form-style{
+    width: 100%;
+ }
