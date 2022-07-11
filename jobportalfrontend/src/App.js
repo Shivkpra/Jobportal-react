@@ -1,15 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-// import ForgetPassword from './Components/ForgetPassword';
-import ResetPassword from './Components/ResetPassword';
-function App() {
-  return (
-    <>
-      {/* <ForgetPassword/> */}
-      <ResetPassword/>
 
-    </>
-  );
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import "./App.css";
+import HomeScreen from "./Components/Home Screen/Navbar";
+
+function App() {
+  return <HomeScreen />;
 }
 
 export default App;
