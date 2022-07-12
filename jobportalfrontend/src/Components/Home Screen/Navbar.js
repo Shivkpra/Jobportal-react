@@ -3,6 +3,7 @@ import "./Navbar.css";
 import CareerStats from "./careerStats";
 import JobsList from "./jobsList";
 import BottomPanel from "./bottomPanel";
+import Footer from "../Footer";
 
 function HomeScreen() {
   return (
@@ -142,6 +143,7 @@ function HomeScreen() {
       <CareerStats />
       <JobsList />
       <BottomPanel />
+      <Footer/>
     </React.Fragment>
   );
 }
