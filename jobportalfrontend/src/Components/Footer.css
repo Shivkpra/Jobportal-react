@@ -1,0 +1,17 @@
+.footer-main{
+    background-color:rgb(54, 54, 56);
+    height: 150px;
+
+}
+.para {
+    float:right;
+    margin-top: 0px;
+    margin-left: 50%;
+    margin-right: 10%;
+}
+.contact{
+    float: right;
+    margin-right: 300px;
+    margin-top: 30px;
+    margin-left:150px;
+    }
