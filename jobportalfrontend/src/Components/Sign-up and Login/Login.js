@@ -1,10 +1,10 @@
 import React from "react";
-import signup from "../Components/Images/Signup.jpg";
+import signup from "../../Components/Images/Signup.jpg";
 import { Form, Button } from "react-bootstrap";
-import "../Components/Signup.css";
-import Footer from "../Components/Footer";
+import "./Signup.css";
+import Footer from "./Footer";
 import Dropdown from "react-bootstrap/Dropdown";
-function Signup() {
+function Login() {
   return (
     <div className="main-signup">
       <div className="signup-image">
@@ -17,12 +17,8 @@ function Signup() {
       <div>
         <div className="form">
           <div style={{ display: "block", width: 700, padding: 30 }}>
-            <h4>Register Here</h4>
+            <h4>Log In Now</h4>
             <Form>
-              <Form.Group>
-                <Form.Label>Enter your full name:</Form.Label>
-                <Form.Control type="text" placeholder="Enter your full name" />
-              </Form.Group>
               <Form.Group>
                 <Form.Label>Enter your email address:</Form.Label>
                 <Form.Control
@@ -30,22 +26,29 @@ function Signup() {
                   placeholder="Enter your your email address"
                 />
               </Form.Group>
-              <br/>
-
+              <Form.Group>
+                <Form.Label>Password:</Form.Label>
+                <Form.Control type="password" placeholder="Enter password" />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Enter your full name:</Form.Label>
+                <Form.Control type="text" placeholder="Enter your full name" />
+              </Form.Group>
               <Dropdown>
                 <Dropdown.Toggle variant="primary" id="dropdown-basic">
-                  Role
+                  Dropdown Button
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">Company</Dropdown.Item>
+                  <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
                   <Dropdown.Item href="#/action-2">
-                    Talent
+                    Another action
                   </Dropdown.Item>
-                  
+                  <Dropdown.Item href="#/action-3">
+                    Something else
+                  </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
-              <br/>
 
               <Button variant="primary" type="submit">
                 Register
@@ -67,4 +70,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Login;

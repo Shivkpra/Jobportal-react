@@ -3,7 +3,8 @@ import "./Navbar.css";
 import CareerStats from "./careerStats";
 import JobsList from "./jobsList";
 import BottomPanel from "./bottomPanel";
-import Footer from "../Footer";
+import Footer from "../Sign-up and Login/Footer";
+import { Link } from "react-router-dom";
 
 function HomeScreen() {
   return (
@@ -36,7 +37,7 @@ function HomeScreen() {
                     >
                       <ul class="navbar-nav ml-auto nav-links">
                         <li class="nav-item">
-                          <a class="nav-link px-2 py-0" href="#">
+                          <a class="nav-link px-2 py-0">
                             Home
                           </a>
                         </li>
@@ -51,6 +52,7 @@ function HomeScreen() {
                           </a>
                         </li>
                         <li class="nav-item">
+                          <Link to="/register">
                           <a
                             class="nav-link px-2 py-0"
                             data-toggle="modal"
@@ -58,6 +60,7 @@ function HomeScreen() {
                           >
                             Register
                           </a>
+                          </Link>
                         </li>
                       </ul>
                     </div>

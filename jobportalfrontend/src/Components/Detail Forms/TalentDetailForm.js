@@ -1,6 +1,7 @@
 import React from "react";
 import "./DetailForm.css";
-import Footer from "../Footer";
+import Footer from "../Sign-up and Login/Footer";
+import { Link } from "react-router-dom";
 
 function TalentDetailsPage() {
   return (
@@ -33,9 +34,11 @@ function TalentDetailsPage() {
                     >
                       <ul class="navbar-nav ml-auto nav-links">
                         <li class="nav-item">
-                          <a class="nav-link px-2 py-0" href="#">
+                          <Link to="/home">
+                          <a class="nav-link px-2 py-0">
                             Home
                           </a>
+                          </Link>
                         </li>
 
                         <li class="nav-item ml-2">
