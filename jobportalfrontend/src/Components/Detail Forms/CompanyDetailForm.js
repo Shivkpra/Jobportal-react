@@ -1,6 +1,6 @@
 import React from "react";
 import "./DetailForm.css";
-import Footer from "../Footer";
+import Footer from "../Sign-up and Login/Footer";
 
 function CompanyDetailsPage() {
   return (

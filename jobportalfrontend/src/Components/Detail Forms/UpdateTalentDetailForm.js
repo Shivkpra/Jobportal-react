@@ -3,7 +3,7 @@ import "./DetailForm.css";
 import Footer from "../Sign-up and Login/Footer";
 import { Link } from "react-router-dom";
 
-function TalentDetailsPage() {
+function UpdateTalentDetails() {
   return (
     <React.Fragment>
       <div class="bg-image">
@@ -35,9 +35,7 @@ function TalentDetailsPage() {
                       <ul class="navbar-nav ml-auto nav-links">
                         <li class="nav-item">
                           <Link to="/home">
-                          <a class="nav-link px-2 py-0">
-                            Home
-                          </a>
+                            <a class="nav-link px-2 py-0">Home</a>
                           </Link>
                         </li>
 
@@ -78,10 +76,10 @@ function TalentDetailsPage() {
                 <div class="row text-white">
                   <div class="col-lg-12">
                     <div class="panel-content" style={{ margin: "20px" }}>
-                      <h1 class="display-5 fw-bold">Talent Details Page</h1>
+                      <h1 class="display-5 fw-bold">Update Talent Details</h1>
                       <p class="lead" style={{ opacity: "0.6" }}>
-                        Register your talent details in our powerful career
-                        website
+                        Update talent details here in case anything was left out
+                        or provided incorrectly!
                       </p>
                     </div>
                   </div>
@@ -179,7 +177,7 @@ function TalentDetailsPage() {
             class="btn px-3 py-2 text-white"
             style={{ backgroundColor: "#1440AE" }}
           >
-            Submit Details
+            Update Details
           </button>
         </form>
       </div>
@@ -189,4 +187,4 @@ function TalentDetailsPage() {
   );
 }
 
-export default TalentDetailsPage;
+export default UpdateTalentDetails;

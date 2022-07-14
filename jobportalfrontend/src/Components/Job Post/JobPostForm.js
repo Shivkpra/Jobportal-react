@@ -1,9 +1,7 @@
 import React from "react";
-import "./DetailForm.css";
 import Footer from "../Sign-up and Login/Footer";
-import { Link } from "react-router-dom";
 
-function TalentDetailsPage() {
+function CompanyJobPostForm() {
   return (
     <React.Fragment>
       <div class="bg-image">
@@ -34,11 +32,9 @@ function TalentDetailsPage() {
                     >
                       <ul class="navbar-nav ml-auto nav-links">
                         <li class="nav-item">
-                          <Link to="/home">
-                          <a class="nav-link px-2 py-0">
+                          <a class="nav-link px-2 py-0" href="#">
                             Home
                           </a>
-                          </Link>
                         </li>
 
                         <li class="nav-item ml-2">
@@ -78,10 +74,9 @@ function TalentDetailsPage() {
                 <div class="row text-white">
                   <div class="col-lg-12">
                     <div class="panel-content" style={{ margin: "20px" }}>
-                      <h1 class="display-5 fw-bold">Talent Details Page</h1>
+                      <h1 class="display-5 fw-bold">Company Job Post</h1>
                       <p class="lead" style={{ opacity: "0.6" }}>
-                        Register your talent details in our powerful career
-                        website
+                        Finding The Right One Isn’t Hard
                       </p>
                     </div>
                   </div>
@@ -94,92 +89,94 @@ function TalentDetailsPage() {
 
       <div className="container my-5">
         <form>
-          <div class="row mb-3">
-            <div class="col">
-              <label for="talent_phone" className="mb-2">
-                Talent Contact
+          <div class="row mb-1">
+            <div class="col-lg-6 mb-3">
+              <label for="job_title" className="mb-2">
+                Job Title
               </label>
               <input
                 type="text"
                 class="form-control"
-                id="talent_phone"
-                placeholder="Enter Talent Contact"
+                id="job_title"
+                placeholder="Enter Job Title"
                 required
               />
             </div>
-            <div class="col">
-              <label for="gender" className="mb-2">
-                Talent Gender
-              </label>
-              <select class="form-control" id="gender" name="gender">
-                <option selected disabled>
-                  Select a Gender
-                </option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="unknown">Unknown</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group mb-3">
-            <label for="higher_education" className="mb-2">
-              Higher Education Details
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="higher_education"
-              placeholder="Enter Higher Education Details"
-              required
-            />
-          </div>
 
-          <div class="row mb-3">
-            <div class="col">
-              <label for="talent_address" className="mb-2">
-                Talent Address
+            <div class="col-lg-6 mb-3">
+              <label for="job_type" className="mb-2">
+                Job Type
               </label>
               <input
-                type="text"
+                type="tel"
                 class="form-control"
-                id="talent_address"
-                placeholder="Enter Talent Address"
+                id="job_type"
+                placeholder="Enter Job Type"
                 required
               />
             </div>
 
-            <div class="col">
-              <label for="employee_exp" className="mb-2">
-                Experience (In Years)
+            <div class="col-lg-6">
+              <div class="form-group mb-3">
+                <label for="job_desc" className="mb-2">
+                  Job Description
+                </label>
+                <textarea
+                  class="form-control"
+                  id="job_desc"
+                  rows="1"
+                  placeholder="Enter Job Description"
+                  required
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="col-lg-6 mb-3">
+              <label for="job_openings" className="mb-2">
+                Job Openings
               </label>
               <input
                 type="number"
                 class="form-control"
-                id="employee_exp"
-                placeholder="Enter Employee Experience"
+                id="job_openings"
+                placeholder="Enter Job Openings"
+                required
+              />
+            </div>
+
+            <div class="col-lg-6 mb-3">
+              <label for="salary_range" className="mb-2">
+                Salary Range
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="salary_range"
+                placeholder="Enter Salary Range"
+                required
+              />
+            </div>
+
+            <div class="col-lg-6 mb-3">
+              <label for="job_location" className="mb-2">
+                Job Location
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="job_location"
+                placeholder="Enter Job Location"
                 required
               />
             </div>
           </div>
 
-          <div class="form-group mb-3">
-            <label for="talent_skills" className="mb-2">
-              Talent Skills
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="talent_skills"
-              placeholder="Enter Talent Skills"
-              required
-            />
-          </div>
           <button
             type="submit"
             class="btn px-3 py-2 text-white"
             style={{ backgroundColor: "#1440AE" }}
           >
-            Submit Details
+            Add Job
           </button>
         </form>
       </div>
@@ -189,4 +186,4 @@ function TalentDetailsPage() {
   );
 }
 
-export default TalentDetailsPage;
+export default CompanyJobPostForm;

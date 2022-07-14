@@ -1,15 +1,15 @@
 import React from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
 import CareerStats from "./careerStats";
 import JobsList from "./jobsList";
 import BottomPanel from "./bottomPanel";
-import Footer from "../Footer";
+import Footer from "../Sign-up and Login/Footer";
+import { Link } from "react-router-dom";
 
 function HomeScreen() {
   return (
     <React.Fragment>
-      <div class="bg-image">
+      <div class="hero-bg-image">
         <div className="overlay">
           <div className="container">
             <header class="header">
@@ -37,9 +37,7 @@ function HomeScreen() {
                     >
                       <ul class="navbar-nav ml-auto nav-links">
                         <li class="nav-item">
-                          <Link class="nav-link px-2 py-0" href="#">
-                            Home
-                          </Link>
+                          <a class="nav-link px-2 py-0">Home</a>
                         </li>
 
                         <li class="nav-item ml-2">
@@ -52,12 +50,14 @@ function HomeScreen() {
                           </Link>
                         </li>
                         <li class="nav-item">
-                          <Link
-                            class="nav-link px-2 py-0"
-                            data-toggle="modal"
-                            data-target=".bd-example-modal-lg"
-                          >
-                            Register
+                          <Link to="/register">
+                            <a
+                              class="nav-link px-2 py-0"
+                              data-toggle="modal"
+                              data-target=".bd-example-modal-lg"
+                            >
+                              Register
+                            </a>
                           </Link>
                         </li>
                       </ul>
@@ -144,7 +144,7 @@ function HomeScreen() {
       <CareerStats />
       <JobsList />
       <BottomPanel />
-      <Footer/>
+      <Footer />
     </React.Fragment>
   );
 }

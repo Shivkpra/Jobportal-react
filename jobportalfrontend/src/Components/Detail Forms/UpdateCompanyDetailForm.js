@@ -1,9 +1,8 @@
 import React from "react";
 import "./DetailForm.css";
 import Footer from "../Sign-up and Login/Footer";
-import { Link } from "react-router-dom";
 
-function TalentDetailsPage() {
+function UpdateCompanyDetails() {
   return (
     <React.Fragment>
       <div class="bg-image">
@@ -34,11 +33,9 @@ function TalentDetailsPage() {
                     >
                       <ul class="navbar-nav ml-auto nav-links">
                         <li class="nav-item">
-                          <Link to="/home">
-                          <a class="nav-link px-2 py-0">
+                          <a class="nav-link px-2 py-0" href="#">
                             Home
                           </a>
-                          </Link>
                         </li>
 
                         <li class="nav-item ml-2">
@@ -78,10 +75,10 @@ function TalentDetailsPage() {
                 <div class="row text-white">
                   <div class="col-lg-12">
                     <div class="panel-content" style={{ margin: "20px" }}>
-                      <h1 class="display-5 fw-bold">Talent Details Page</h1>
+                      <h1 class="display-5 fw-bold">Update Company Details</h1>
                       <p class="lead" style={{ opacity: "0.6" }}>
-                        Register your talent details in our powerful career
-                        website
+                        Update your company details in case anything was left
+                        out or provided incorrectly!
                       </p>
                     </div>
                   </div>
@@ -96,90 +93,89 @@ function TalentDetailsPage() {
         <form>
           <div class="row mb-3">
             <div class="col">
-              <label for="talent_phone" className="mb-2">
-                Talent Contact
+              <label for="company_name" className="mb-2">
+                Company Name
               </label>
               <input
                 type="text"
                 class="form-control"
-                id="talent_phone"
-                placeholder="Enter Talent Contact"
+                id="company_name"
+                placeholder="Enter Company Name"
                 required
               />
             </div>
             <div class="col">
-              <label for="gender" className="mb-2">
-                Talent Gender
+              <label for="contact_no" className="mb-2">
+                Company Contact
               </label>
-              <select class="form-control" id="gender" name="gender">
-                <option selected disabled>
-                  Select a Gender
-                </option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="unknown">Unknown</option>
-              </select>
+              <input
+                type="tel"
+                class="form-control"
+                id="contact_no"
+                placeholder="Enter Company Contact"
+                required
+              />
             </div>
           </div>
           <div class="form-group mb-3">
-            <label for="higher_education" className="mb-2">
-              Higher Education Details
+            <label for="company_address" className="mb-2">
+              Company Address
             </label>
             <input
               type="text"
               class="form-control"
-              id="higher_education"
-              placeholder="Enter Higher Education Details"
+              id="company_address"
+              placeholder="Enter Company Address"
               required
             />
           </div>
 
           <div class="row mb-3">
             <div class="col">
-              <label for="talent_address" className="mb-2">
-                Talent Address
+              <label for="company_domain" className="mb-2">
+                Company Domain
               </label>
               <input
                 type="text"
                 class="form-control"
-                id="talent_address"
-                placeholder="Enter Talent Address"
+                id="company_domain"
+                placeholder="Enter Company Domain"
                 required
               />
             </div>
 
             <div class="col">
-              <label for="employee_exp" className="mb-2">
-                Experience (In Years)
+              <label for="employee_count" className="mb-2">
+                Employee Count
               </label>
               <input
                 type="number"
                 class="form-control"
-                id="employee_exp"
-                placeholder="Enter Employee Experience"
+                id="employee_count"
+                placeholder="Enter Company Employee Count"
                 required
               />
             </div>
           </div>
 
           <div class="form-group mb-3">
-            <label for="talent_skills" className="mb-2">
-              Talent Skills
+            <label for="company_description" className="mb-2">
+              Company Description
             </label>
-            <input
-              type="text"
+            <textarea
               class="form-control"
-              id="talent_skills"
-              placeholder="Enter Talent Skills"
+              id="company_description"
+              rows="5"
+              placeholder="Enter Company Description"
               required
-            />
+            ></textarea>
           </div>
           <button
             type="submit"
             class="btn px-3 py-2 text-white"
             style={{ backgroundColor: "#1440AE" }}
           >
-            Submit Details
+            Update Details
           </button>
         </form>
       </div>
@@ -189,4 +185,4 @@ function TalentDetailsPage() {
   );
 }
 
-export default TalentDetailsPage;
+export default UpdateCompanyDetails;
