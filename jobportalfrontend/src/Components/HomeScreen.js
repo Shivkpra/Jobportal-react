@@ -6,13 +6,13 @@ import {
   FormControl,
   ControlLabel,
 } from "react-bootstrap";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 function Screen() {
   return (
     <div>
-    <Footer/>
+    {/* <Footer/> */}
     </div>
   );
 }
