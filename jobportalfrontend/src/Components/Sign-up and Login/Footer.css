@@ -1,17 +1,13 @@
-.footer-main{
-    background-color:rgb(54, 54, 56);
-    height: 150px;
+.footer-main
+{
+    background-color: #242424;
+    color: #7f848c;
+}
 
+.icon-hover-color {
+    transition: 0.3s ease-in-out;
 }
-.para {
-    float:right;
-    margin-top: 0px;
-    margin-left: 50%;
-    margin-right: 10%;
+
+.icon-hover-color:hover {
+    color: #007bb6 !important;
 }
-.contact{
-    float: right;
-    margin-right: 300px;
-    margin-top: 30px;
-    margin-left:150px;
-    }
