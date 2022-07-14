@@ -6,6 +6,7 @@ import {
   FormControl,
   ControlLabel,
 } from "react-bootstrap";
+<<<<<<< HEAD
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 function HomeScreen() {
@@ -27,8 +28,21 @@ function HomeScreen() {
           </Button>
         </Form>
       </div>
+=======
+// import Footer from "./Footer";
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+function Screen() {
+  return (
+    <div>
+    {/* <Footer/> */}
+>>>>>>> development
     </div>
   );
 }
 
+<<<<<<< HEAD
 export default HomeScreen;
+=======
+export default Screen;
+>>>>>>> development
