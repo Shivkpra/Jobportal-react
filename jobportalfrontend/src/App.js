@@ -8,7 +8,12 @@ import Login from "./Components/Sign-up and Login/Login";
 import CompanyDetailsPage from "./Components/Detail Forms/CompanyDetailForm";
 import TalentDetailsPage from "./Components/Detail Forms/TalentDetailForm";
 import {Route,Routes,BrowserRouter} from "react-router-dom"
+import env from "react-dotenv"
+import { LOGIN,LOGOUT } from "./Components/Services/Urls";
 function App() {
+  console.log("urls",LOGIN,LOGOUT)
+  const envfile = process.env
+  console.log(`${envfile.REACT_APP_BACKEND_URL}/user/register`)
   return (
     <BrowserRouter>
       <Routes>
