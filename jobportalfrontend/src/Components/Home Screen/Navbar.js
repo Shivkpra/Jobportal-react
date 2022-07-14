@@ -1,5 +1,6 @@
 import React from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 import CareerStats from "./careerStats";
 import JobsList from "./jobsList";
 import BottomPanel from "./bottomPanel";
@@ -36,28 +37,28 @@ function HomeScreen() {
                     >
                       <ul class="navbar-nav ml-auto nav-links">
                         <li class="nav-item">
-                          <a class="nav-link px-2 py-0" href="#">
+                          <Link class="nav-link px-2 py-0" href="#">
                             Home
-                          </a>
+                          </Link>
                         </li>
 
                         <li class="nav-item ml-2">
-                          <a
+                          <Link
                             class="nav-link px-2 py-0"
                             data-toggle="modal"
                             data-target=".bd-example-modal-lg2"
                           >
                             Job Listings
-                          </a>
+                          </Link>
                         </li>
                         <li class="nav-item">
-                          <a
+                          <Link
                             class="nav-link px-2 py-0"
                             data-toggle="modal"
                             data-target=".bd-example-modal-lg"
                           >
                             Register
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </div>
