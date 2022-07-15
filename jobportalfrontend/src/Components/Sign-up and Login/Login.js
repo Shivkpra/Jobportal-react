@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import signup from "../../Components/Images/Signup.jpg";
 import { Form, Button } from "react-bootstrap";
 import "./Signup.css";
 import Footer from "./Footer";
 import Dropdown from "react-bootstrap/Dropdown";
+import { useDispatch,useSelector } from "react-redux";
+import { LoginUser } from "../Services/redux/Actions";
+import { Link } from "react-router-dom";
+
+
+
 function Login() {
+  const[enterdEmail, setEnteredEmail]=useState('')
+  const[enterdPassword, setEnteredPassword]=useState('')
+
+  const dispatch = useDispatch()
+
+  const loginHandler = (e) => {
+      e.preventDefault();
+      const login = {"email": enterdEmail, "password": enterdPassword}
+      
+      dispatch(LoginUser(login))
+      setEnteredEmail('')
+      setEnteredPassword('')
+
+  }
+
   return (
     <div className="main-signup">
       <div className="signup-image">
@@ -12,7 +33,7 @@ function Login() {
           <h1>Let's Register yourself to come one more step closer to </h1>
           <span className="span-text">your Dream Job</span>
         </div>
-        <img src={signup} width="1533" height="600" />
+        <img src={signup} width="1533" height="600" alt="signin"/>
       </div>
       <div>
         <div className="form">
@@ -24,35 +45,24 @@ function Login() {
                 <Form.Control
                   type="email"
                   placeholder="Enter your your email address"
+                  value={enterdEmail}
+                  onChange = {(e) => {setEnteredEmail(e.target.value)}}
                 />
               </Form.Group>
               <Form.Group>
                 <Form.Label>Password:</Form.Label>
-                <Form.Control type="password" placeholder="Enter password" />
+                <Form.Control type="password" placeholder="Enter password" value={enterdPassword} onChange= {(e) => {setEnteredPassword(e.target.value)}} />
               </Form.Group>
-              <Form.Group>
-                <Form.Label>Enter your full name:</Form.Label>
-                <Form.Control type="text" placeholder="Enter your full name" />
-              </Form.Group>
-              <Dropdown>
-                <Dropdown.Toggle variant="primary" id="dropdown-basic">
-                  Dropdown Button
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">
-                    Another action
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">
-                    Something else
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-
-              <Button variant="primary" type="submit">
-                Register
+              
+              
+              
+              <Button variant="primary" type="submit" className="mt-2" onClick={(e)=> {loginHandler(e)}}>
+              <Link to="/home" style={{"color":"white", "text-decoration":"none"}}>
+                Login
+                </Link>
               </Button>
+              
+
             </Form>
           </div>
         </div>

@@ -11,9 +11,12 @@ export const LoginUser = createAsyncThunk('user/login',async(login)=>{
         url : url.LOGIN,
         data : {"email":email,"password":password}
     }).then(res=>{
+
         return res.data
     }).catch(err=>console.log(err))
+    console.log(response.data)
     return response.data
+
 })
 
 export const LogoutUser = createAsyncThunk('user/logout',async(tokens)=>{

@@ -12,7 +12,7 @@ function Signup() {
           <h1>Let's Register yourself to come one more step closer to </h1>
           <span className="span-text">your Dream Job</span>
         </div>
-        <img src={signup} width="1533" height="600" />
+        <img src={signup} width="1533" height="600" alt="Signup" />
       </div>
       <div>
         <div className="form">

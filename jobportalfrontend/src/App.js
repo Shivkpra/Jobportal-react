@@ -13,11 +13,32 @@ import UpdateTalentDetails from "./Components/Detail Forms/UpdateTalentDetailFor
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import env from "react-dotenv";
 
+import { LoginUser, LogoutUser } from "./Components/Services/redux/Actions";
+import { useEffect } from "react";
+
+
 function App() {
+
+// const dispatch = useDispatch()
+// const access = useSelector(state => state.jobportal.data.access)
+// const refresh = useSelector(state => state.jobportal.data.refresh)
+// console.log(access)
+
+// const login = {"email":"shaikh.affan253@gmail.com", "password": "R5xJcUr39L"}
+// const token = {"access": access, "refresh":refresh}
+// const backend = () => {
+//   dispatch(LoginUser(login))
+
+// }
+// useEffect(() => {backend()},[] )
+// dispatch(LogoutUser(token))
+
+ 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="home/" element={<HomeScreen />} />
+        <Route path="login/" element ={<Login />} /> 
         <Route path="register/" element={<Signup />} />
         <Route path="update/talent" element={<UpdateTalentDetails />} />
         <Route path="update/company" element={<UpdateCompanyDetails />} />
