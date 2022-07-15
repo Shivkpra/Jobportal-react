@@ -3,12 +3,9 @@ import signup from "../../Components/Images/Signup.jpg";
 import { Form, Button } from "react-bootstrap";
 import "./Signup.css";
 import Footer from "./Footer";
-import Dropdown from "react-bootstrap/Dropdown";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { LoginUser } from "../Services/redux/Actions";
 import { Link } from "react-router-dom";
-
-
 
 function Login() {
   const[enterdEmail, setEnteredEmail]=useState('')
@@ -19,10 +16,7 @@ function Login() {
   const loginHandler = (e) => {
       e.preventDefault();
       const login = {"email": enterdEmail, "password": enterdPassword}
-      
       dispatch(LoginUser(login))
-      
-
   }
 
   return (
@@ -52,16 +46,11 @@ function Login() {
                 <Form.Label>Password:</Form.Label>
                 <Form.Control type="password" placeholder="Enter password" value={enterdPassword} onChange= {(e) => {setEnteredPassword(e.target.value)}} />
               </Form.Group>
-              
-              
-              
               <Button variant="primary" type="submit" className="mt-2" onClick={(e)=> {loginHandler(e)}}>
               <Link to="/home" style={{"color":"white", "text-decoration":"none"}}>
                 Login
                 </Link>
               </Button>
-              
-
             </Form>
           </div>
         </div>
