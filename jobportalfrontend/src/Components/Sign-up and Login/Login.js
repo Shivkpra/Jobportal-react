@@ -21,8 +21,7 @@ function Login() {
       const login = {"email": enterdEmail, "password": enterdPassword}
       
       dispatch(LoginUser(login))
-      setEnteredEmail('')
-      setEnteredPassword('')
+      
 
   }
 
