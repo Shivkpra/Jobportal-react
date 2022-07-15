@@ -5,6 +5,17 @@ import "./Signup.css";
 import Footer from "./Footer";
 import Dropdown from "react-bootstrap/Dropdown";
 function Signup() {
+  const handlesumbit = (e) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const actualdata = {
+      full_name: data.get("full_name"),
+      email: data.get("email"),
+      
+    };
+    
+    console.log(actualdata);
+  };
   return (
     <div className="main-signup">
       <div className="signup-image">
@@ -18,34 +29,40 @@ function Signup() {
         <div className="form">
           <div style={{ display: "block", width: 700, padding: 30 }}>
             <h4>Register Here</h4>
-            <Form>
+            <Form  onSubmit={handlesumbit}>
               <Form.Group>
                 <Form.Label>Enter your full name:</Form.Label>
-                <Form.Control type="text" placeholder="Enter your full name" />
+                <Form.Control
+                  type="text"
+                  placeholder="Enter your full name"
+                  name="full_name"
+                />
               </Form.Group>
               <Form.Group>
                 <Form.Label>Enter your email address:</Form.Label>
                 <Form.Control
                   type="email"
                   placeholder="Enter your your email address"
+                  name="email"
                 />
               </Form.Group>
-              <br/>
+              <br />
 
-              <Dropdown>
-                <Dropdown.Toggle variant="primary" id="dropdown-basic">
+              <Dropdown name="role">
+                <Dropdown.Toggle
+                  variant="primary"
+                  id="dropdown-basic"
+                  
+                >
                   Role
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
                   <Dropdown.Item href="#/action-1">Company</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">
-                    Talent
-                  </Dropdown.Item>
-                  
+                  <Dropdown.Item href="#/action-2">Talent</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
-              <br/>
+              <br />
 
               <Button variant="primary" type="submit">
                 Register
