@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 function HomeScreen() {
   return (
     <React.Fragment>
-      <div class="hero-bg-image">
+      <div class="bg-image">
         <div className="overlay">
           <div className="container">
             <header class="header">
@@ -37,27 +37,29 @@ function HomeScreen() {
                     >
                       <ul class="navbar-nav ml-auto nav-links">
                         <li class="nav-item">
-                          <a class="nav-link px-2 py-0">Home</a>
+                          <a class="nav-link px-2 py-0">
+                            Home
+                          </a>
                         </li>
 
                         <li class="nav-item ml-2">
-                          <Link
+                          <a
                             class="nav-link px-2 py-0"
                             data-toggle="modal"
                             data-target=".bd-example-modal-lg2"
                           >
                             Job Listings
-                          </Link>
+                          </a>
                         </li>
                         <li class="nav-item">
                           <Link to="/register">
-                            <a
-                              class="nav-link px-2 py-0"
-                              data-toggle="modal"
-                              data-target=".bd-example-modal-lg"
-                            >
-                              Register
-                            </a>
+                          <a
+                            class="nav-link px-2 py-0"
+                            data-toggle="modal"
+                            data-target=".bd-example-modal-lg"
+                          >
+                            Register
+                          </a>
                           </Link>
                         </li>
                       </ul>
@@ -144,7 +146,7 @@ function HomeScreen() {
       <CareerStats />
       <JobsList />
       <BottomPanel />
-      <Footer />
+      <Footer/>
     </React.Fragment>
   );
 }

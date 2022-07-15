@@ -12,10 +12,8 @@ import UpdateJobPostForm from "./Components/Job Post/UpdateJobPost";
 import UpdateTalentDetails from "./Components/Detail Forms/UpdateTalentDetailForm";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import env from "react-dotenv";
-import { LOGIN, LOGOUT } from "./Components/Services/Urls";
 
 function App() {
-  
   return (
     <BrowserRouter>
       <Routes>
