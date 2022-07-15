@@ -21,9 +21,19 @@ function Login() {
       const login = {"email": enterdEmail, "password": enterdPassword}
       
       dispatch(LoginUser(login))
-      
-
+      setEnteredEmail('')
+      setEnteredPassword('')
   }
+
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    if (+enterdEmail || +enterdPassword > 0) {
+      return (
+        <Link to={'/home'}></Link>
+      )
+  }
+}
 
   return (
     <div className="main-signup">
@@ -38,7 +48,7 @@ function Login() {
         <div className="form">
           <div style={{ display: "block", width: 700, padding: 30 }}>
             <h4>Log In Now</h4>
-            <Form>
+            <Form onSubmit={submitHandler}>
               <Form.Group>
                 <Form.Label>Enter your email address:</Form.Label>
                 <Form.Control
@@ -56,9 +66,7 @@ function Login() {
               
               
               <Button variant="primary" type="submit" className="mt-2" onClick={(e)=> {loginHandler(e)}}>
-              <Link to="/home" style={{"color":"white", "text-decoration":"none"}}>
                 Login
-                </Link>
               </Button>
               
 
