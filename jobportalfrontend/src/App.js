@@ -18,7 +18,7 @@ import {useEffect} from "react"
 function App() {
   const dispatch = useDispatch()
   const loginHandler = () => {
-    const login = {"email": "shaikh.affan253@gmail.com", "password": "tMKvnksDwq"}
+    const login = {"email": "rohitghule131@gmail.com", "password": "eFLjXasTnK"}
     dispatch(LoginUser(login))
   }
   useEffect(() => {

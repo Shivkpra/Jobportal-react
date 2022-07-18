@@ -1,8 +1,8 @@
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import "./DetailForm.css";
 import Footer from "../Sign-up and Login/Footer";
 import { useDispatch,useSelector } from "react-redux";
-import { LoginUser,CompanyDetail } from "../Services/redux/Actions";
+import { CompanyDetail } from "../Services/redux/Actions";
 var format = {
   "company_name": String,
   "phone_no": Number,
@@ -18,25 +18,25 @@ function CompanyDetailsPage() {
   const dispatch = useDispatch()
   const access = useSelector(state=>state.jobportal.data.access)
   const user = useSelector(state=>state.jobportal.data.id)
-  console.log(access,user)
   const [companyDetail, setCompanyDetail] = useState(format)
-  // const loginHandler = () => {
-  //   const login = {"email": "shaikh.affan253@gmail.com", "password": "tMKvnksDwq"}
-  //   dispatch(LoginUser(login))
-  // }
-  // useEffect(() => {
-  //   loginHandler()
-  // }, [])
-
   const role = useSelector(state=>state.jobportal.data.role)
   const loggedIn = useSelector(state=>state.jobportal.logedIn)
   const detailHandler = (e) => {
     e.preventDefault()
     if(loggedIn){
       if(role==="COMPANY"){
-        setCompanyDetail({...CompanyDetail,access:access,user:user})
-        console.log("hi")
-        dispatch(CompanyDetail(companyDetail))
+        let data = {
+          "company_name": companyDetail.company_name,
+          "phone_no": companyDetail.phone_no,
+          "address": companyDetail.address,
+          "domain": companyDetail.domain,
+          "description": companyDetail.description,
+          "employee_count": companyDetail.employee_count,
+          "access": access,
+          "user": user
+        }
+        dispatch(CompanyDetail(data))
+        setCompanyDetail(format)
       }
     }
   }

@@ -11,9 +11,6 @@ export const LoginUser = createAsyncThunk('user/login',async(login)=>{
         method : "post",
         url : url.LOGIN,
         data : {"email":email,"password":password}
-    }).then(res=>{
-
-        return res.data
     }).catch(err=>console.log(err))
     console.log(response.data)
     return response.data
@@ -35,8 +32,6 @@ export const LogoutUser = createAsyncThunk('user/logout',async(tokens)=>{
 })
 
 export const CompanyDetail = createAsyncThunk('company/detail',async(data)=>{
-    // const access = useSelector(state=>state.jobportal.data.access)
-    // const user = useSelector(state=>state.jobportal.data.id)
     const {
         company_name,
         phone_no,
@@ -64,15 +59,6 @@ export const CompanyDetail = createAsyncThunk('company/detail',async(data)=>{
             "user": user,
             "employee_count" : employee_count
         }
-    }).then(res=>console.log(res.data)).catch(err=>console.log(err))
+    }).catch(err=>console.log(err))
     return response.data
 })
-
-// address: Array(1)
-// 0: "This field is required."
-// length: 1
-// [[Prototype]]: Array(0)
-// company_name: ['This field is required.']
-// description: ['This field is required.']
-// domain: ['This field is required.']
-// phone_no: ['This field is required.']
