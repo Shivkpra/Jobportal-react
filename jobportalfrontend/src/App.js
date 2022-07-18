@@ -12,8 +12,18 @@ import UpdateJobPostForm from "./Components/Job Post/UpdateJobPost";
 import UpdateTalentDetails from "./Components/Detail Forms/UpdateTalentDetailForm";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import env from "react-dotenv";
-
+import { LoginUser } from "./Components/Services/redux/Actions";
+import { useDispatch } from "react-redux";
+import {useEffect} from "react"
 function App() {
+  const dispatch = useDispatch()
+  const loginHandler = () => {
+    const login = {"email": "shaikh.affan253@gmail.com", "password": "tMKvnksDwq"}
+    dispatch(LoginUser(login))
+  }
+  useEffect(() => {
+    loginHandler()
+  }, [])
   return (
     <BrowserRouter>
       <Routes>
@@ -24,6 +34,7 @@ function App() {
         <Route path="update/company" element={<UpdateCompanyDetails />} />
         <Route path="company/job/add" element={<CompanyJobPostForm />} />
         <Route path="company/job/edit" element={<UpdateJobPostForm />} />
+        <Route path="detail/company" element={<CompanyDetailsPage />} />
       </Routes>
     </BrowserRouter>
   );

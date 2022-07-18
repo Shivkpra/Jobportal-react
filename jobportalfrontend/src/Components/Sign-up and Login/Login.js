@@ -6,19 +6,15 @@ import Footer from "./Footer";
 import { useDispatch } from "react-redux";
 import { LoginUser } from "../Services/redux/Actions";
 import { Link } from "react-router-dom";
-
 function Login() {
   const[enterdEmail, setEnteredEmail]=useState('')
   const[enterdPassword, setEnteredPassword]=useState('')
-
   const dispatch = useDispatch()
-
   const loginHandler = (e) => {
       e.preventDefault();
       const login = {"email": enterdEmail, "password": enterdPassword}
       dispatch(LoginUser(login))
   }
-
   return (
     <div className="main-signup">
       <div className="signup-image">
@@ -67,5 +63,13 @@ function Login() {
     </div>
   );
 }
-
 export default Login;
+
+
+
+
+
+
+
+
+
