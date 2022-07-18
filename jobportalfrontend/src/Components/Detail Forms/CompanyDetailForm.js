@@ -1,8 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import "./DetailForm.css";
 import Footer from "../Sign-up and Login/Footer";
+import { useDispatch,useSelector } from "react-redux";
+import { CompanyDetail } from "../Services/redux/Actions";
+var format = {
+  "company_name": String,
+  "phone_no": Number,
+  "address": String,
+  "domain": String,
+  "description": String,
+  "employee_count": Number,
+  "access": String,
+  "user": Number
+}
 
 function CompanyDetailsPage() {
+  const dispatch = useDispatch()
+  const access = useSelector(state=>state.jobportal.data.access)
+  const user = useSelector(state=>state.jobportal.data.id)
+  const [companyDetail, setCompanyDetail] = useState(format)
+  const role = useSelector(state=>state.jobportal.data.role)
+  const loggedIn = useSelector(state=>state.jobportal.logedIn)
+  const detailHandler = (e) => {
+    e.preventDefault()
+    if(loggedIn){
+      if(role==="COMPANY"){
+        let data = {
+          "company_name": companyDetail.company_name,
+          "phone_no": companyDetail.phone_no,
+          "address": companyDetail.address,
+          "domain": companyDetail.domain,
+          "description": companyDetail.description,
+          "employee_count": companyDetail.employee_count,
+          "access": access,
+          "user": user
+        }
+        dispatch(CompanyDetail(data))
+        setCompanyDetail(format)
+      }
+    }
+  }
   return (
     <React.Fragment>
       <div class="bg-image">
@@ -90,7 +127,9 @@ function CompanyDetailsPage() {
       </div>
 
       <div className="container my-5">
-        <form>
+        <form onSubmit={(e)=>{
+          detailHandler(e)
+        }}>
           <div class="row mb-3">
             <div class="col">
               <label for="company_name" className="mb-2">
@@ -102,6 +141,10 @@ function CompanyDetailsPage() {
                 id="company_name"
                 placeholder="Enter Company Name"
                 required
+                value={companyDetail.company_name}
+                onChange={(e)=>{
+                  setCompanyDetail({...companyDetail,company_name:e.target.value})
+                }}
               />
             </div>
             <div class="col">
@@ -114,6 +157,10 @@ function CompanyDetailsPage() {
                 id="contact_no"
                 placeholder="Enter Company Contact"
                 required
+                value={companyDetail.phone_no}
+                onChange={(e)=>{
+                  setCompanyDetail({...companyDetail,phone_no:e.target.value})
+                }}
               />
             </div>
           </div>
@@ -127,6 +174,10 @@ function CompanyDetailsPage() {
               id="company_address"
               placeholder="Enter Company Address"
               required
+              value={companyDetail.address}
+                onChange={(e)=>{
+                  setCompanyDetail({...companyDetail,address:e.target.value})
+                }}
             />
           </div>
 
@@ -141,6 +192,10 @@ function CompanyDetailsPage() {
                 id="company_domain"
                 placeholder="Enter Company Domain"
                 required
+                value={companyDetail.domain}
+                onChange={(e)=>{
+                  setCompanyDetail({...companyDetail,domain:e.target.value})
+                }}
               />
             </div>
 
@@ -154,6 +209,10 @@ function CompanyDetailsPage() {
                 id="employee_count"
                 placeholder="Enter Company Employee Count"
                 required
+                value={companyDetail.employee_count}
+                onChange={(e)=>{
+                  setCompanyDetail({...companyDetail,employee_count:e.target.value})
+                }}
               />
             </div>
           </div>
@@ -168,12 +227,19 @@ function CompanyDetailsPage() {
               rows="5"
               placeholder="Enter Company Description"
               required
+              value={companyDetail.description}
+                onChange={(e)=>{
+                  setCompanyDetail({...companyDetail,description:e.target.value})
+                }}
             ></textarea>
           </div>
           <button
             type="submit"
             class="btn px-3 py-2 text-white"
             style={{ backgroundColor: "#1440AE" }}
+            onClick={(e)=>{
+              detailHandler(e)
+            }}
           >
             Submit Details
           </button>
