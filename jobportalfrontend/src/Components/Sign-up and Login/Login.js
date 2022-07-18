@@ -6,19 +6,15 @@ import Footer from "./Footer";
 import { useDispatch } from "react-redux";
 import { LoginUser } from "../Services/redux/Actions";
 import { Link } from "react-router-dom";
-
 function Login() {
   const[enterdEmail, setEnteredEmail]=useState('')
   const[enterdPassword, setEnteredPassword]=useState('')
-
   const dispatch = useDispatch()
-
   const loginHandler = (e) => {
       e.preventDefault();
       const login = {"email": enterdEmail, "password": enterdPassword}
       dispatch(LoginUser(login))
   }
-
   return (
     <div className="main-signup">
       <div className="signup-image">
@@ -33,7 +29,7 @@ function Login() {
           <div style={{ display: "block", width: 700, padding: 30 }}>
             <h4>Log In Now</h4>
             <Form>
-              <Form.Group>
+              {/* <Form.Group>
                 <Form.Label>Enter your email address:</Form.Label>
                 <Form.Control
                   type="email"
@@ -41,8 +37,8 @@ function Login() {
                   value={enterdEmail}
                   onChange = {(e) => {setEnteredEmail(e.target.value)}}
                 />
-              </Form.Group>
-              <Form.Group>
+              </Form.Group> */}
+              {/* <Form.Group>
                 <Form.Label>Password:</Form.Label>
                 <Form.Control type="password" placeholder="Enter password" value={enterdPassword} onChange= {(e) => {setEnteredPassword(e.target.value)}} />
               </Form.Group>
@@ -50,7 +46,7 @@ function Login() {
               <Link to="/home" style={{"color":"white", "text-decoration":"none"}}>
                 Login
                 </Link>
-              </Button>
+              </Button> */}
             </Form>
           </div>
         </div>
@@ -67,5 +63,13 @@ function Login() {
     </div>
   );
 }
-
 export default Login;
+
+
+
+
+
+
+
+
+

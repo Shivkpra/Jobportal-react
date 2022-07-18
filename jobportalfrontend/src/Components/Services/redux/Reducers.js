@@ -10,7 +10,7 @@ const jobPortalReducer = createSlice({
     
     extraReducers:(builder)=>{
         builder.addCase(actions.LoginUser.fulfilled,(state,payload)=>{
-            state.data = payload.payload
+            state.data = payload.payload.data
             state.logedIn = true
             state.logout = false
             state.loginError = false
