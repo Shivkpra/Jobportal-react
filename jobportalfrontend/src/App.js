@@ -24,6 +24,8 @@ function App() {
         <Route path="update/company" element={<UpdateCompanyDetails />} />
         <Route path="company/job/add" element={<CompanyJobPostForm />} />
         <Route path="company/job/edit" element={<UpdateJobPostForm />} />
+        <Route path="company/detail" element={<CompanyDetailsPage />} />
+        <Route path="talent/detail" element={<TalentDetailsPage />} />
       </Routes>
     </BrowserRouter>
   );

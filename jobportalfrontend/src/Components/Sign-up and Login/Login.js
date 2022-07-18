@@ -20,14 +20,19 @@ function Login() {
   }
 
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    if (+enterdEmail || +enterdPassword > 0) {
-      return (
-        <Link to={'/home'}></Link>
-      )
-  }
-}
+
+const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
+
 
   return (
     <div className="main-signup">
@@ -36,25 +41,27 @@ function Login() {
           <h1>Let's Register yourself to come one more step closer to </h1>
           <span className="span-text">your Dream Job</span>
         </div>
-        <img src={signup} width="1533" height="600" alt="signin"/>
+        <img src={signup} width="100%" height="610" alt="signin"/>
       </div>
       <div>
         <div className="form">
           <div style={{ display: "block", width: 700, padding: 30 }}>
             <h4>Log In Now</h4>
-            <Form onSubmit={submitHandler}>
-              <Form.Group>
-                <Form.Label>Enter your email address:</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Enter your your email address"
-                  value={enterdEmail}
-                  onChange = {(e) => {setEnteredEmail(e.target.value)}}
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Label>Password:</Form.Label>
-                <Form.Control type="password" placeholder="Enter password" value={enterdPassword} onChange= {(e) => {setEnteredPassword(e.target.value)}} />
+            <Form onSubmit={handleSubmit} noValidate validated={validated}>
+            <Form.Group  controlId="validationCustom01">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            required
+            type="email"
+            placeholder="Email"
+            
+          />
+          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          </Form.Group>
+              <Form.Group controlId="validationCustom02">
+                <Form.Label className = "mt-2">Password:</Form.Label>
+                <Form.Control required type="password" placeholder="Enter password" value={enterdPassword} onChange= {(e) => {setEnteredPassword(e.target.value)}} />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               </Form.Group>
               <Button variant="primary" type="submit" className="mt-2" onClick={(e)=> {loginHandler(e)}}>
                 Login
