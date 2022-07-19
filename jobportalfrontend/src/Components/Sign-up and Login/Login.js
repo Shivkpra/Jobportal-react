@@ -44,7 +44,9 @@ function Login() {
                 <Form.Control type="password" placeholder="Enter password" value={enterdPassword} onChange= {(e) => {setEnteredPassword(e.target.value)}} />
               </Form.Group>
               <Button variant="primary" type="submit" className="mt-2" onClick={(e)=> {loginHandler(e)}}>
+              {/* <Link to="/home" style={{"color":"white", "text-decoration":"none"}}> */}
                 Login
+                {/* </Link> */}
               </Button>
             </Form>
           </div>

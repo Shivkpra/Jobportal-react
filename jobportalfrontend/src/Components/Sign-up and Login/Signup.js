@@ -3,7 +3,6 @@ import signup from "../../Components/Images/Signup.jpg";
 import { Form, Button } from "react-bootstrap";
 import "./Signup.css";
 import Footer from "./Footer";
-import Dropdown from "react-bootstrap/Dropdown";
 import { useDispatch } from "react-redux";
 import { SignUp } from "../Services/redux/Actions";
 
@@ -12,15 +11,13 @@ var format = {
   "full_name": String,
   "role": String
 }
-
-
 function Signup() {
   const [data, setData] = useState(format)
-
   const dispatch = useDispatch()
   const dataHandler = (e) => {
     e.preventDefault()
     dispatch(SignUp(data))
+    setData(format)
   }
   return (
     <div className="main-signup">
@@ -58,16 +55,19 @@ function Signup() {
                 />
               </Form.Group>
               <br />
-              <select class="form-select" aria-label="Default select example" onChange={(e)=>{
-                setData({...data, role: e.target.value});
+              <select class="form-select" aria-label="Default select example" onChange={(e) => {
+                setData({ ...data, role: e.target.value });
               }}>
                 <option value="COMPANY">Company</option>
                 <option value="TALENT">Talent</option>
-
               </select>
-
               <br />
-              <Button variant="primary" type="submit" onClick={(e) => dataHandler(e)}>
+              <Button
+                onClick={(e) => {
+                  dataHandler(e)
+                }}
+                variant="primary"
+                type="submit">
                 Register
               </Button>
             </Form>

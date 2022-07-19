@@ -58,7 +58,7 @@ function JobsList() {
                   <p style={{ opacity: "0.6" }}>India</p>
                 </div>
               </div>
-              {jobcards}
+              
 
               <div class="col-lg-3">
                 <div class="mb-3">

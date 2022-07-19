@@ -64,7 +64,7 @@ export const CompanyDetail = createAsyncThunk('company/detail',async(data)=>{
 })
 
 export const SignUp = createAsyncThunk('registe/user',async(data)=>{
-    const {email, full_name, role} = data
+    const {email, full_name, role} = data 
     const response = await axios({
         method:'post',
         url:url.REGISTER,
