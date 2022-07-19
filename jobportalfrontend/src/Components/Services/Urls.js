@@ -36,3 +36,4 @@ export const DELETE_POSTED_JOB = `${url}/company/job/delete/`
 export const SAVE_TALENT = `${url}/company/bookmarktalent`
 export const DELETE_SAVED_TALENT = `${url}/company/deleteBookMarkedTalent/`
 export const SHOW_SAVED_TALENT = `${url}/company/showsbookmarked`
+export const SHOW_COMP_DETAIL = `${url}/company/showcompdetail`

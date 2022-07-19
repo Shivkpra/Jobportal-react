@@ -1,7 +1,49 @@
-import React from "react";
+import React, { useState} from "react";
 import Footer from "../Sign-up and Login/Footer";
+import { useDispatch,useSelector } from "react-redux";
+import { postjobs } from "../Services/redux/Actions";
+import { comp_detail } from "../Services/redux/Actions";
+
+var info = {
+  "job_title": String,
+  "job_description": String,
+  "job_type": String,
+  "job_openings": Number,
+  "salary_range": String,
+  "job_location": String,
+  "access": String,
+  "role": Number,
+}
 
 function CompanyJobPostForm() {
+  const dispatch = useDispatch();
+  const access = useSelector(state=>state.jobportal.data.access)
+  const role = useSelector(state=>state.jobportal.data.role)
+  const loggedIn = useSelector(state=>state.jobportal.logedIn)
+  dispatch(comp_detail(access))
+  const comp_id = useSelector(state=>state.jobportal.companyDetail.id)
+  const [jobPost, setJobPost] = useState(info)
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if(loggedIn){
+      if (role === 'COMPANY'){
+        let data = {
+          "company" : comp_id,
+          "job_title": jobPost.job_title,
+          "job_description": jobPost.job_description,
+          "job_type": jobPost.job_type,
+          "job_openings": jobPost.job_openings,
+          "salary_range": jobPost.salary_range,
+          "job_location": jobPost.job_location,
+          "access": access,
+        }
+        dispatch(postjobs(data))
+        setJobPost(info)
+      }
+      
+    }
+  }
   return (
     <React.Fragment>
       <div class="bg-image">
@@ -100,6 +142,10 @@ function CompanyJobPostForm() {
                 id="job_title"
                 placeholder="Enter Job Title"
                 required
+                value = {jobPost.job_title}
+                onChange = {(e)=>{
+                  setJobPost({...jobPost,job_title:e.target.value})
+                }}
               />
             </div>
 
@@ -113,6 +159,10 @@ function CompanyJobPostForm() {
                 id="job_type"
                 placeholder="Enter Job Type"
                 required
+                value = {jobPost.job_type}
+                onChange = {(e)=>{
+                  setJobPost({...jobPost,job_type:e.target.value})
+                }}
               />
             </div>
 
@@ -127,6 +177,10 @@ function CompanyJobPostForm() {
                   rows="1"
                   placeholder="Enter Job Description"
                   required
+                  value = {jobPost.job_description}
+                onChange = {(e)=>{
+                  setJobPost({...jobPost,job_description:e.target.value})
+                }}
                 ></textarea>
               </div>
             </div>
@@ -141,6 +195,10 @@ function CompanyJobPostForm() {
                 id="job_openings"
                 placeholder="Enter Job Openings"
                 required
+                value = {jobPost.job_openings}
+                onChange = {(e)=>{
+                  setJobPost({...jobPost,job_openings:e.target.value})
+                }}
               />
             </div>
 
@@ -154,6 +212,10 @@ function CompanyJobPostForm() {
                 id="salary_range"
                 placeholder="Enter Salary Range"
                 required
+                value = {jobPost.salary_range}
+                onChange = {(e)=>{
+                  setJobPost({...jobPost,salary_range:e.target.value})
+                }}
               />
             </div>
 
@@ -167,14 +229,18 @@ function CompanyJobPostForm() {
                 id="job_location"
                 placeholder="Enter Job Location"
                 required
+                value = {jobPost.job_location}
+                onChange = {(e)=>{
+                  setJobPost({...jobPost,job_location:e.target.value})
+                }}
               />
             </div>
           </div>
 
           <button
-            type="submit"
             class="btn px-3 py-2 text-white"
             style={{ backgroundColor: "#1440AE" }}
+            onClick= {handleSubmit}
           >
             Add Job
           </button>

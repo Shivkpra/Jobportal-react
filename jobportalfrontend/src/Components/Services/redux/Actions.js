@@ -91,3 +91,46 @@ export const Joblist = createAsyncThunk('talent/joblist', async(access) => {
     }).catch(err=>console.log(err))
     return response.data
 })
+
+export const postjobs = createAsyncThunk('company/jobpost', async(data)=>{
+    const{job_title,
+            job_description,
+            job_type,
+            job_openings,
+            salary_range,
+            job_location,
+            company,
+            access,} = data
+            console.log(data)
+    const response = await axios({
+        method: 'post',
+        url: url.JOB_POST,
+        headers: {
+            "Authorization":`Bearer ${access}`,
+            "content-type": "application/json"
+        },
+        data :{
+            "company": `${company}`,
+            "job_title" : `${job_title}`,
+            "job_description" : `${job_description}`,
+            "job_type" : `${job_type}`,
+            "job_openings" : `${job_openings}`,
+            "job_salary_range": `${salary_range}`,
+            "job_location":`${job_location}`,
+        }
+
+    }).catch(err => console.log(err));
+    return response.data;
+})
+
+export const comp_detail = createAsyncThunk ('company/comp_detail', async(access)=>{
+    const response = await axios({
+        method: 'get',
+        url: url.SHOW_COMP_DETAIL,
+        headers:{
+            "Authorization":`Bearer ${access}`,
+        }
+
+    }).catch(err => console.log(err));
+    return response.data;
+})

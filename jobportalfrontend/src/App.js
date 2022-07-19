@@ -17,13 +17,13 @@ import { useDispatch } from "react-redux";
 import {useEffect} from "react"
 function App() {
   const dispatch = useDispatch()
-  // const loginHandler = () => {
-  //   const login = {"email": "rohit.ghule@mindbowser.com", "password": "abcd"}
-  //   dispatch(LoginUser(login))
-  // }
-  // useEffect(() => {
-  //   loginHandler()
-  // }, [])
+  const loginHandler = () => {
+    const login = {"email": "shaikh.affan253@gmail.com", "password": "R5xJcUr39L"}
+    dispatch(LoginUser(login))
+  }
+  useEffect(() => {
+    loginHandler()
+  }, [])
   return (
     <BrowserRouter>
       <Routes>
