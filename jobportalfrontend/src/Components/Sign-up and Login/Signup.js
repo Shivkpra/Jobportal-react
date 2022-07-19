@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import signup from "../../Components/Images/Signup.jpg";
 import { Form, Button } from "react-bootstrap";
 import "./Signup.css";
 import Footer from "./Footer";
 import Dropdown from "react-bootstrap/Dropdown";
+import { useDispatch } from "react-redux";
+import { SignUp } from "../Services/redux/Actions";
+
+var format = {
+  "email": String,
+  "full_name": String,
+  "role": String
+}
+
+
 function Signup() {
+  const [data, setData] = useState(format)
+
+  const dispatch = useDispatch()
+  const dataHandler = (e) => {
+    e.preventDefault()
+    dispatch(SignUp(data))
+  }
   return (
     <div className="main-signup">
       <div className="signup-image">
@@ -21,33 +38,36 @@ function Signup() {
             <Form>
               <Form.Group>
                 <Form.Label>Enter your full name:</Form.Label>
-                <Form.Control type="text" placeholder="Enter your full name" />
+                <Form.Control
+                  value={data.full_name}
+                  onChange={(e) => {
+                    setData({ ...data, full_name: e.target.value })
+                  }}
+                  type="text"
+                  placeholder="Enter your full name" />
               </Form.Group>
               <Form.Group>
                 <Form.Label>Enter your email address:</Form.Label>
                 <Form.Control
+                  value={data.email}
+                  onChange={(e) => {
+                    setData({ ...data, email: e.target.value })
+                  }}
                   type="email"
                   placeholder="Enter your your email address"
                 />
               </Form.Group>
-              <br/>
+              <br />
+              <select class="form-select" aria-label="Default select example" onChange={(e)=>{
+                setData({...data, role: e.target.value});
+              }}>
+                <option value="COMPANY">Company</option>
+                <option value="TALENT">Talent</option>
 
-              <Dropdown>
-                <Dropdown.Toggle variant="primary" id="dropdown-basic">
-                  Role
-                </Dropdown.Toggle>
+              </select>
 
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">Company</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">
-                    Talent
-                  </Dropdown.Item>
-                  
-                </Dropdown.Menu>
-              </Dropdown>
-              <br/>
-
-              <Button variant="primary" type="submit">
+              <br />
+              <Button variant="primary" type="submit" onClick={(e) => dataHandler(e)}>
                 Register
               </Button>
             </Form>
@@ -66,5 +86,4 @@ function Signup() {
     </div>
   );
 }
-
 export default Signup;

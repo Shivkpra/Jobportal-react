@@ -62,3 +62,32 @@ export const CompanyDetail = createAsyncThunk('company/detail',async(data)=>{
     }).catch(err=>console.log(err))
     return response.data
 })
+
+export const SignUp = createAsyncThunk('registe/user',async(data)=>{
+    const {email, full_name, role} = data
+    const response = await axios({
+        method:'post',
+        url:url.REGISTER,
+        headers:{
+            "content-type": "application/json"
+        },
+        data:{
+            "email":email,
+            "full_name":full_name,
+            "role":role
+        }
+    }).catch(err=>console.log(err))
+    return response.data
+})
+
+
+export const Joblist = createAsyncThunk('talent/joblist', async(access) => {
+    const response = await axios({
+        method: 'GET',
+        url: url.JOB_LIST,
+        headers:{
+            "Authorization":`Bearer ${access}`,
+        }
+    }).catch(err=>console.log(err))
+    return response.data
+})
