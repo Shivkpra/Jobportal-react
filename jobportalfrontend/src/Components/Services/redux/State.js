@@ -14,4 +14,5 @@ export const initailState = {
     loginError:false,
     error:false,
     signup:false,
+    jobpost: [],
 }
