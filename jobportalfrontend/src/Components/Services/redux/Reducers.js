@@ -29,6 +29,7 @@ const jobPortalReducer = createSlice({
         })
         builder.addCase(actions.CompanyDetail.fulfilled,(state,payload)=>{
             state.companyDetail = payload.payload
+            console.log(payload.type)
             state.error = false
         })
         builder.addCase(actions.CompanyDetail.rejected,(state)=>{
@@ -38,6 +39,14 @@ const jobPortalReducer = createSlice({
             state.signup = true
         })
         builder.addCase(actions.SignUp.rejected,(state)=>{
+            state.error = true
+        })
+        builder.addCase(actions.Joblist.fulfilled,(state,payload)=>{
+            state.joblist = payload.payload.data
+            console.log(payload.type)
+            state.error = false
+        })
+        builder.addCase(actions.Joblist.rejected,(state)=>{
             state.error = true
         })
     }

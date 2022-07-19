@@ -5,7 +5,6 @@ import "./Signup.css";
 import Footer from "./Footer";
 import { useDispatch } from "react-redux";
 import { LoginUser } from "../Services/redux/Actions";
-import { Link } from "react-router-dom";
 function Login() {
   const[enterdEmail, setEnteredEmail]=useState('')
   const[enterdPassword, setEnteredPassword]=useState('')
@@ -14,6 +13,8 @@ function Login() {
       e.preventDefault();
       const login = {"email": enterdEmail, "password": enterdPassword}
       dispatch(LoginUser(login))
+      setEnteredEmail('')
+      setEnteredPassword('')
   }
   return (
     <div className="main-signup">
@@ -22,7 +23,7 @@ function Login() {
           <h1>Let's Register yourself to come one more step closer to </h1>
           <span className="span-text">your Dream Job</span>
         </div>
-        <img src={signup} width="1533" height="600" alt="signin"/>
+        <img src={signup} width="100%" height="610" alt="signin"/>
       </div>
       <div>
         <div className="form">

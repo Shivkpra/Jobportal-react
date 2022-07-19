@@ -72,7 +72,9 @@ function HomeScreen() {
                     class="btn p-2 text-white"
                     style={{ width: "100%", backgroundColor: "#1440AE" }}
                   >
+                    <Link to = "/login" style={{"color": "#fff", "textDecoration": "none"}}>
                     Log In
+                    </Link>
                   </button>
                 </div>
               </div>

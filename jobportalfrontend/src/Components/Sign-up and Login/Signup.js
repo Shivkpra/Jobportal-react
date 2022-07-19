@@ -55,12 +55,6 @@ function Signup() {
                 />
               </Form.Group>
               <br />
-              onChange={(e) => {
-                setData({ ...data, role: e.target.value })
-              }}
-              variant="primary" 
-                id="dropdown-basic">
-              Role
               <select class="form-select" aria-label="Default select example" onChange={(e) => {
                 setData({ ...data, role: e.target.value });
               }}>
@@ -92,5 +86,4 @@ function Signup() {
     </div>
   );
 }
-
 export default Signup;
