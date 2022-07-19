@@ -29,7 +29,7 @@ function Login() {
           <div style={{ display: "block", width: 700, padding: 30 }}>
             <h4>Log In Now</h4>
             <Form>
-              {/* <Form.Group>
+              <Form.Group>
                 <Form.Label>Enter your email address:</Form.Label>
                 <Form.Control
                   type="email"
@@ -37,16 +37,16 @@ function Login() {
                   value={enterdEmail}
                   onChange = {(e) => {setEnteredEmail(e.target.value)}}
                 />
-              </Form.Group> */}
-              {/* <Form.Group>
+              </Form.Group>
+              <Form.Group>
                 <Form.Label>Password:</Form.Label>
                 <Form.Control type="password" placeholder="Enter password" value={enterdPassword} onChange= {(e) => {setEnteredPassword(e.target.value)}} />
               </Form.Group>
               <Button variant="primary" type="submit" className="mt-2" onClick={(e)=> {loginHandler(e)}}>
-              <Link to="/home" style={{"color":"white", "text-decoration":"none"}}>
+              {/* <Link to="/home" style={{"color":"white", "text-decoration":"none"}}> */}
                 Login
-                </Link>
-              </Button> */}
+                {/* </Link> */}
+              </Button>
             </Form>
           </div>
         </div>

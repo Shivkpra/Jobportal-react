@@ -40,7 +40,6 @@ function CompanyDetailsPage() {
       }
     }
   }
-  console.log(companyDetail)
   return (
     <React.Fragment>
       <div class="bg-image">

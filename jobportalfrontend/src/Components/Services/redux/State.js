@@ -12,5 +12,6 @@ export const initailState = {
     companyDetail:[],
     applyjobs:[],
     loginError:false,
-    error:false
+    error:false,
+    signup:false,
 }

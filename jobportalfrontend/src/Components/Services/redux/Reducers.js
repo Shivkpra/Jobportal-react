@@ -34,6 +34,12 @@ const jobPortalReducer = createSlice({
         builder.addCase(actions.CompanyDetail.rejected,(state)=>{
             state.error = true
         })
+        builder.addCase(actions.SignUp.fulfilled,(state)=>{
+            state.signup = true
+        })
+        builder.addCase(actions.SignUp.rejected,(state)=>{
+            state.error = true
+        })
     }
 })
 
